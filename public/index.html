@@ -1,8 +1,21 @@
 <html>
 <head>
 	<title>My Book</title>
+	<script type="text/javascript" src="lib/angular/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </head>
-<body>
-
+<body ng-controller="mainCtrl">
+	<table>
+		<thead>
+			<th>Title</th>
+			<th>Price</th>
+		</thead>	
+		<tbody>
+			<tr ng-repeat="book in books">
+				<td>{{book.title}}</td>
+				<td>{{book.price | currency:'B'}}</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
